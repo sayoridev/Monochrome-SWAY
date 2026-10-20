@@ -1,0 +1,47 @@
+# ==========================================
+# SWAYLOCK-EFFECTS MONOCHROME
+# ==========================================
+
+# blur
+screenshots
+effect-blur=12x6
+effect-vignette=0.5:0.5
+fade-in=0.2
+
+# font
+font=JetBrainsMono Nerd Font
+font-size=14
+
+# center indicator
+indicator
+indicator-radius=70
+indicator-thickness=3
+
+#
+ring-color=333333
+inside-color=000000a0
+line-color=00000000
+
+# Colors - While Typing (Pure White)
+key-hl-color=ffffff
+inside-ver-color=000000c0
+ring-ver-color=ffffff
+line-ver-color=00000000
+
+# Colors - Wrong Password (White/Black Inversion)
+inside-wrong-color=ffffff
+ring-wrong-color=ffffff
+text-wrong-color=000000
+line-wrong-color=00000000
+
+# Indicator text
+text-color=ffffff
+text-clear-color=ffffff
+text-caps-lock-color=ffffff
+show-failed-attempts
+
+# Clock and Date integrated on Screen
+clock
+timestr=%H:%M
+datestr=%A, %d %B
+image=/home/meoow/Pictures/wallpapers/wallhaven-4ox9wm.jpg

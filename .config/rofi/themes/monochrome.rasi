@@ -1,0 +1,124 @@
+/* ==========================================
+   ROFI MONOCHROME 
+   ========================================== */
+
+* {
+    bg-col:                      #000000;
+    bg-col-light:                #121212;
+    border-col:                  #333333;
+    selected-col:                #ffffff;
+    selected-text:               #000000;
+    text-col:                    #e0e0e0;
+    text-dim:                    #666666;
+    
+    font:                        "JetBrainsMono Nerd Font 11";
+    background-color:            transparent;
+    text-color:                  @text-col;
+    margin:                      0;
+    padding:                     0;
+}
+
+window {
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       550px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    border:                      2px solid;
+    border-color:                @selected-col;
+    border-radius:               4px;
+    background-color:            @bg-col;
+    cursor:                      "default";
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    padding:                     20px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     10px 14px;
+    background-color:            @bg-col-light;
+    border:                      1px solid;
+    border-color:                @border-col;
+    border-radius:               4px;
+    text-color:                  @text-col;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @selected-col;
+    str:                         "❯";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @text-col;
+    cursor:                      text;
+    placeholder:                 "Cerca applicazione...";
+    placeholder-color:           @text-dim;
+}
+
+/* ==========================================
+   LISTA RISULTATI
+   ========================================== */
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     5px;
+    background-color:            transparent;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     8px 12px;
+    border-radius:               3px;
+    background-color:            transparent;
+    text-color:                  @text-col;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @text-col;
+}
+
+element selected.normal {
+    background-color:            @selected-col;
+    text-color:                  @selected-text;
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        20px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}

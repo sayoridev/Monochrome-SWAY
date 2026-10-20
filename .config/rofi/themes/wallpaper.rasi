@@ -1,0 +1,78 @@
+* {
+    background: #000000;
+    foreground: #ffffff;
+    border-color: #ffffff;
+    background-color: #000000;
+    text-color: #ffffff;
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 900px;
+    height: 750px;
+    border: 2px;
+    border-color: #ffffff;
+    padding: 20px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 15px;
+}
+
+inputbar {
+    padding: 10px;
+    border: 1px;
+    border-color: #ffffff;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    text-color: #ffffff;
+}
+
+entry {
+    text-color: #ffffff;
+    placeholder: "Cerca wallpaper...";
+    placeholder-color: #666666;
+}
+
+listview {
+    columns: 2;
+    lines: 2;
+    spacing: 15px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    spacing: 10px;
+    border: 1px;
+    border-color: #222222;
+}
+
+element selected {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    text-color: #000000;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 260px;
+    horizontal-align: 0.5;
+    background-color: #000000;
+    border: 1px;
+    border-color: #333333;
+}

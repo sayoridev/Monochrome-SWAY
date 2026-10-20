@@ -1,0 +1,135 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    // Module Layout
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["custom/updates", "clock"],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "custom/kbd-backlight",
+        "cpu",
+        "memory",
+        "network",
+        "bluetooth",
+        "battery",
+        "tray"
+    ],
+
+    // Sway Workspaces
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    // Pacman / Paru / Flatpak Updates
+    "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/updates.sh",
+        "return-type": "json",
+        "interval": 1800,
+        "on-click": "foot -e paru -Syu",
+        "restart-interval": 60
+    },
+
+    // Clock
+    "clock": {
+        "interval": 1,
+        "format": "󰥔 {:%d/%m/%Y  %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    // Audio
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // Screen Brightness (Controllable via Scroll)
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": true,
+        "tooltip-format": "Screen Brightness: {percent}%"
+    },
+
+    // Keyboard Backlight (Controllable via Scroll and Click for On/Off)
+    "custom/kbd-backlight": {
+            "exec": "~/.config/waybar/scripts/kbd-backlight.sh",
+            "interval": 1,
+            "format": "󰌌 {}%",
+            "on-click": "~/.config/waybar/scripts/kbd-backlight.sh menu",
+            "on-scroll-up": "~/.config/waybar/scripts/kbd-backlight.sh up",
+            "on-scroll-down": "~/.config/waybar/scripts/kbd-backlight.sh down",
+            "tooltip": true,
+            "tooltip-format": "Keyboard Backlight: {}%\n• Scroll: +/- 10%\n• Click: Choose level"
+        },
+
+    // CPU
+    "cpu": {
+        "interval": 2,
+        "format": "󰍛 {usage}%",
+        "tooltip": true
+    },
+
+    // RAM
+    "memory": {
+        "interval": 2,
+        "format": "󰘚 {percentage}%",
+        "tooltip-format": "Used: {used:0.1f}GiB / {total:0.1f}GiB"
+    },
+
+    // Network
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 ETH",
+        "format-disconnected": "󰤭 OFF",
+        "tooltip-format": "IP: {ipaddr}",
+        "on-click": "foot --app-id=foot-wifi-tui nmtui-connect"
+    },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+
+    // Battery
+    "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": "󰂄 {capacity}%",
+            "format-plugged": "󰚥 {capacity}%",
+            "format-icons": ["󰂎", "󰁺", "󰁼", "󰁾", "󰂀", "󰁹"],
+            "tooltip": true,
+            "tooltip-format": "Estimated time: {time}\nBattery health: {health}%\nCurrent draw: {power} W"
+        },
+
+    // Tray
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    }
+}

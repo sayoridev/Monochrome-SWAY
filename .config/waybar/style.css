@@ -1,0 +1,123 @@
+/* ~/.config/waybar/style.css */
+
+* {
+    border: none;
+    border-radius: 4px;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #080808;
+    color: #e0e0e0;
+    border-bottom: 1px solid #1c1c1c;
+}
+
+/* Moduli Generici */
+#workspaces,
+#clock,
+#custom-updates,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#custom-kbd-backlight
+#network,
+#bluetooth,
+#battery,
+#tray,
+#mode {
+    padding: 2px 10px;
+    margin: 3px 2px;
+    background-color: #121212;
+    color: #d0d0d0;
+    border: 1px solid #222222;
+}
+
+#backlight, #custom-kbd-backlight {
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #222222;
+}
+
+/* Workspaces Sway */
+#workspaces button {
+    padding: 0px 8px;
+    background-color: transparent;
+    color: #777777;
+    border-radius: 3px;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#workspaces button:hover {
+    background-color: #262626;
+    color: #ffffff;
+}
+
+/* Orologio al centro */
+#clock {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333333;
+}
+
+/* Modulo Aggiornamenti Pacman */
+#custom-updates {
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #222222;
+}
+
+#custom-updates.has-updates {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+#custom-updates.up-to-date {
+    color: #888888;
+}
+
+/* Bluetooth */
+#bluetooth.connected {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333333;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #555555;
+}
+
+/* Stato Audio Muto */
+#pulseaudio.muted {
+    background-color: #1a1a1a;
+    color: #666666;
+    border-color: #333333;
+}
+
+/* Stato Batteria */
+#battery.warning {
+    color: #ffffff;
+    border-color: #666666;
+}
+
+#battery.critical {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+/* System Tray */
+#tray {
+    background-color: transparent;
+    border: none;
+}
